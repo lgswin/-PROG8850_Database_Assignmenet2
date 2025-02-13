@@ -2,10 +2,10 @@ import mysql.connector
 import os
 
 # Database credentials from GitHub Secrets
-DB_HOST = os.getenv("DB_HOST", "mymydb.mysql.database.azure.com")
-DB_USER = os.getenv("DB_USER", "lgswin")
-DB_PASSWORD = os.getenv("DB_PASSWORD", "Secret5555")
-DB_NAME = os.getenv("DB_NAME", "companydb")
+DB_HOST = os.getenv("DB_HOST")
+DB_USER = os.getenv("DB_USER")
+DB_PASSWORD = os.getenv("DB_PASSWORD")
+DB_NAME = os.getenv("DB_NAME")
 
 # Connect to MySQL
 try:
