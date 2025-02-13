@@ -4,8 +4,8 @@ from mysql.connector import Error
 # Database connection details
 DB_CONFIG = {
     "host": "localhost",  # Change to your MySQL host
-    "user": "root",  # Change to your MySQL username
-    "password": "",  # Change to your MySQL password
+    "user": "lgswin",  # Change to your MySQL username
+    "password": "Secret5555",  # Change to your MySQL password
     "database": "mysql"  # Change to your database name
 }
 
