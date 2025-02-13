@@ -1,13 +1,13 @@
 import mysql.connector
 import os
 
-# GitHub Secrets
-DB_HOST = os.getenv("DB_HOST")
-DB_USER = os.getenv("DB_ADMIN_USER")
-DB_PASSWORD = os.getenv("DB_PASSWORD")
-DB_NAME = os.getenv("DB_NAME")
+# Database credentials from GitHub Secrets
+DB_HOST = os.getenv("DB_HOST", "mymydb.mysql.database.azure.com")
+DB_USER = os.getenv("DB_USER", "lgswin")
+DB_PASSWORD = os.getenv("DB_PASSWORD", "Secret5555")
+DB_NAME = os.getenv("DB_NAME", "companydb")
 
-# MySQL connection
+# Connect to MySQL
 try:
     connection = mysql.connector.connect(
         host=DB_HOST,
@@ -18,14 +18,20 @@ try:
     cursor = connection.cursor()
     print("Connected to MySQL Database!")
 
-    # run SQL file
-    sql_files = ["newtable.sql"] 
+    # Read and execute SQL file
+    sql_files = ["newtable.sql"]
     for file in sql_files:
         with open(file, "r") as f:
             sql_script = f.read()
-            cursor.execute(sql_script, multi=True)
-            print(f"Executed {file} successfully.")
+            sql_statements = sql_script.split(";")  # Split script by semicolon
 
+            for statement in sql_statements:
+                clean_statement = statement.strip()
+                if clean_statement:  # Avoid executing empty statements
+                    cursor.execute(clean_statement)
+                    print(f"Executed: {clean_statement}")
+
+    # Commit changes and close connection
     connection.commit()
     cursor.close()
     connection.close()
