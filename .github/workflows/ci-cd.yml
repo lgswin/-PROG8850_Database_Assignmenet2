@@ -18,4 +18,4 @@ jobs:
           DB_USER: ${{ secrets.DB_ADMIN_USER }}
           DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
           DB_NAME: ${{ secrets.DB_NAME }}
-        run: mysql -h $DB_HOST -u $DB_USER -p $DB_PASSWORD $DB_NAME < newtable.sql
+        run: mysql -h $DB_HOST -u $DB_USER -p$DB_PASSWORD $DB_NAME < newtable.sql
