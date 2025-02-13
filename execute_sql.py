@@ -18,8 +18,8 @@ try:
     cursor = connection.cursor()
     print("Connected to MySQL Database!")
 
-    # Read and execute SQL file
-    sql_files = ["newtable.sql"]
+    # Read and execute SQL files
+    sql_files = ["newtable.sql", "add_departments.sql"]  # Add the new SQL script
     for file in sql_files:
         with open(file, "r") as f:
             sql_script = f.read()
