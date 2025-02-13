@@ -1,11 +1,15 @@
 # -PROG8850_Database_Assignmenet2
 
-* To access mysql server in my local
-- id : root
-- password : ""
-- host : "localhost"
+* workflows
+- Triggers on a Push to main
+- Runs the Workflow on ubuntu-latest Machine
+- Downloads the latest code from the repository.
+- Installs MySQL tools
+- Installs Python and the mysql-connector-python package
+- Uses environment variables from GitHub Secrets for secure database connection.
+- Runs the Python script 
 
-* To run python code to apply sql script
-python mysql-connector-sql.py or python mysql-connector-sql-fromFile.py
-For the second one, a sql file must be in the same directory.
+* Whenever I have new SQL file, it can be added it on the variable, SQL files to apply automatically when I pushed the changes.
+
+sql_files = ["newtable.sql", "add_departments.sql"]  # Add the new SQL script
 
