@@ -6,7 +6,7 @@ DB_CONFIG = {
     "host": "localhost",  # Change to your MySQL host
     "user": "lgswin",  # Change to your MySQL username
     "password": "Secret5555",  # Change to your MySQL password
-    "database": "mysql"  # Change to your database name
+    "database": "assignment2"  # Change to your database name
 }
 
 SQL_FILE_PATH = "newtable.sql"  # Change to the actual path of netable.sql
